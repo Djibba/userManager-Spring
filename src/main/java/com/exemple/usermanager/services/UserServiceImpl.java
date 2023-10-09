@@ -5,6 +5,7 @@ import com.exemple.usermanager.entities.User;
 import com.exemple.usermanager.repos.RoleRepository;
 import com.exemple.usermanager.repos.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +18,7 @@ public class UserServiceImpl implements UserService{
     UserRepository userRepository;
     @Autowired
     RoleRepository roleRepository;
+    @Lazy
     @Autowired
     BCryptPasswordEncoder bCryptPasswordEncoder;
 

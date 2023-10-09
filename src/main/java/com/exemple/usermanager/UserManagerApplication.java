@@ -14,30 +14,30 @@ public class UserManagerApplication {
 
     @Autowired
     UserService userService;
+
     public static void main(String[] args) {
         SpringApplication.run(UserManagerApplication.class, args);
     }
 
-    @PostConstruct
-    public void init_users(){
-        System.out.println("Application started ...");
-
-        // ajout des roles
-        userService.addRoleToUser("admin", "ADMIN");
-        userService.addRoleToUser("user", "USER");
-
-        //ajout des users
-        userService.saveUser(new User(null, "admin", "1234", true, null));
-        userService.saveUser(new User(null, "djibba", "1234", true, null));
-        userService.saveUser(new User(null, "abdallah", "1234", true, null));
-
-        // ajout des roles au user
-        userService.addRoleToUser("admin", "ADMIN");
-        userService.addRoleToUser("admin", "USER");
-        userService.addRoleToUser("djibba", "USER");
-        userService.addRoleToUser("abdallah", "USER");
-    }
-
+//    @PostConstruct
+//     public void init(){
+//
+//        // ajout des roles
+//        userService.addRoleToUser("admin", "ADMIN");
+//        userService.addRoleToUser("user", "USER");
+//
+//        //ajout des users
+//        userService.saveUser(new User(null, "admin", "1234", true, null));
+//        userService.saveUser(new User(null, "djibba", "1234", true, null));
+//        userService.saveUser(new User(null, "abdallah", "1234", true, null));
+//
+//        // ajout des roles au user
+//        userService.addRoleToUser("admin", "ADMIN");
+//        userService.addRoleToUser("admin", "USER");
+//        userService.addRoleToUser("djibba", "USER");
+//        userService.addRoleToUser("abdallah", "USER");
+//    }
+//
     @Bean
     BCryptPasswordEncoder getBCPE(){
         return new BCryptPasswordEncoder();
