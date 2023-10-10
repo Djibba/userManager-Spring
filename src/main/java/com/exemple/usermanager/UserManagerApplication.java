@@ -37,7 +37,7 @@ public class UserManagerApplication {
 //        userService.addRoleToUser("djibba", "USER");
 //        userService.addRoleToUser("abdallah", "USER");
 //    }
-//
+
     @Bean
     BCryptPasswordEncoder getBCPE(){
         return new BCryptPasswordEncoder();
